@@ -107,7 +107,7 @@ const scrollProjects = [...projects, ...projects, ...projects, ...projects];
 
 function TestimonialCard({ testimonial }: { testimonial: { name: string; role: string; quote: string; rating: number } }) {
   return (
-    <div className="bg-background p-5 md:p-6 border border-border hover:border-gold/15 transition-all flex flex-col shrink-0">
+    <div className="glass-card p-5 md:p-6 hover:border-gold/15 transition-all flex flex-col shrink-0 rounded-lg">
       <div className="flex items-center gap-1 mb-3">
         {[...Array(testimonial.rating)].map((_, i) => (
           <Star key={i} className="w-3 h-3 fill-gold text-gold" />
