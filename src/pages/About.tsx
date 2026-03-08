@@ -223,7 +223,7 @@ export default function About() {
               Whether you're looking for a home or an investment, our team is ready to help you make the right decision.
             </p>
             <a href="tel:9958004587">
-              <button className="bg-gold text-background hover:bg-gold-dark px-10 py-3 font-body font-semibold text-[13px] tracking-[0.15em] uppercase transition-all duration-300">
+              <button className="gradient-gold text-background hover:opacity-90 px-10 py-3 font-body font-semibold text-[13px] tracking-[0.15em] uppercase transition-all duration-300">
                 Call +91 9958004587
               </button>
             </a>

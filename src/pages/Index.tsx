@@ -538,7 +538,7 @@ export default function Index() {
             </p>
             <div className="flex flex-wrap justify-center gap-5">
               <a href="tel:9958004587">
-                <Button className="bg-gold text-background hover:bg-gold-dark h-13 px-10 font-body font-semibold text-[13px] tracking-[0.15em] uppercase rounded-none">
+                <Button className="gradient-gold text-background hover:opacity-90 h-13 px-10 font-body font-semibold text-[13px] tracking-[0.15em] uppercase rounded-none">
                   <Phone className="w-4 h-4 mr-3" /> +91 9958004587
                 </Button>
               </a>
