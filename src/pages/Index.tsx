@@ -302,7 +302,7 @@ export default function Index() {
                 to={`/projects/${project.slug}`}
                 className="group block shrink-0 w-[380px]"
               >
-                <div className="bg-background border border-border hover:border-gold/20 transition-all duration-500 overflow-hidden luxury-shadow">
+                <div className="glass hover:border-gold/20 transition-all duration-500 overflow-hidden rounded-lg luxury-shadow">
                   <div className="aspect-[4/3] overflow-hidden relative">
                     <img
                       src={project.image}
