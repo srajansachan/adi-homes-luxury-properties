@@ -261,11 +261,11 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ═══════════════ FEATURED PROJECTS — INFINITE SCROLL ═══════════════ */}
-      <section className="py-24 lg:py-32 bg-card overflow-hidden">
-        <div className="container mx-auto px-6 lg:px-10 mb-16">
+      {/* ═══════════════ FEATURED PROJECTS — GRID ═══════════════ */}
+      <section className="py-24 lg:py-32 bg-card">
+        <div className="container mx-auto px-6 lg:px-10">
           <AnimatedSection>
-            <div className="text-center max-w-2xl mx-auto">
+            <div className="text-center max-w-2xl mx-auto mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <div className="h-px w-8 bg-gold/40" />
                 <span className="text-gold text-[12px] font-medium tracking-[0.3em] uppercase">Portfolio</span>
@@ -279,70 +279,55 @@ export default function Index() {
               </p>
             </div>
           </AnimatedSection>
-        </div>
 
-        {/* Infinite horizontal scroll */}
-        <div className="relative">
-          <motion.div
-            className="flex gap-8"
-            animate={{ x: [0, -(projects.length * 420)] }}
-            transition={{
-              x: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 60,
-                ease: "linear",
-              },
-            }}
-          >
-            {scrollProjects.map((project, i) => (
-              <Link
-                key={`${project.id}-${i}`}
-                to={`/projects/${project.slug}`}
-                className="group block shrink-0 w-[380px]"
-              >
-                <div className="bg-background border border-border hover:border-gold/20 transition-all duration-500 overflow-hidden luxury-shadow">
-                  <div className="aspect-[4/3] overflow-hidden relative">
-                    <img
-                      src={project.image}
-                      alt={project.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-                    <div className="absolute bottom-4 left-4">
-                      <span className="text-[11px] font-medium gradient-gold text-background px-3 py-1 tracking-[0.15em] uppercase">
-                        {project.status}
-                      </span>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {featuredProjects.map((project, i) => (
+              <AnimatedSection key={project.id} delay={i * 0.1} direction="up">
+                <Link to={`/projects/${project.slug}`} className="group block h-full">
+                  <div className="bg-background border border-border hover:border-gold/20 transition-all duration-500 overflow-hidden luxury-shadow h-full">
+                    <div className="aspect-[4/3] overflow-hidden relative">
+                      <img
+                        src={project.image}
+                        alt={project.name}
+                        loading="lazy"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+                      <div className="absolute bottom-4 left-4">
+                        <span className="text-[11px] font-medium gradient-gold text-background px-3 py-1 tracking-[0.15em] uppercase">
+                          {project.status}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      <p className="text-muted-foreground text-xs tracking-[0.15em] uppercase mb-2">{project.type}</p>
+                      <h3 className="font-display text-2xl font-bold group-hover:text-gold transition-colors duration-300 mb-2">
+                        {project.name}
+                      </h3>
+                      <p className="flex items-center gap-1.5 text-muted-foreground text-sm mb-4">
+                        <MapPin className="w-3.5 h-3.5 text-gold/60" /> {project.location}
+                      </p>
+                      <div className="luxury-divider mb-4" />
+                      <div className="flex items-center justify-between">
+                        <span className="font-display text-xl font-bold text-gold">{project.priceRange}</span>
+                        <span className="flex items-center text-gold text-xs font-medium tracking-[0.15em] uppercase group-hover:translate-x-1 transition-transform">
+                          Details <ChevronRight className="w-3.5 h-3.5 ml-1" />
+                        </span>
+                      </div>
                     </div>
                   </div>
-                  <div className="p-6">
-                    <p className="text-muted-foreground text-xs tracking-[0.15em] uppercase mb-2">{project.type}</p>
-                    <h3 className="font-display text-2xl font-bold group-hover:text-gold transition-colors duration-300 mb-2">
-                      {project.name}
-                    </h3>
-                    <p className="flex items-center gap-1.5 text-muted-foreground text-sm mb-4">
-                      <MapPin className="w-3.5 h-3.5 text-gold/60" /> {project.location}
-                    </p>
-                    <div className="luxury-divider mb-4" />
-                    <div className="flex items-center justify-between">
-                      <span className="font-display text-xl font-bold text-gold">{project.priceRange}</span>
-                      <span className="flex items-center text-gold text-xs font-medium tracking-[0.15em] uppercase group-hover:translate-x-1 transition-transform">
-                        Details <ChevronRight className="w-3.5 h-3.5 ml-1" />
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Link>
+                </Link>
+              </AnimatedSection>
             ))}
-          </motion.div>
-        </div>
+          </div>
 
-        <div className="container mx-auto px-6 lg:px-10 mt-12 text-center">
-          <Link to="/projects">
-            <Button variant="outline" className="border-gold/30 text-gold hover:bg-gold/5 h-13 px-10 font-body text-[13px] tracking-[0.15em] uppercase rounded-none">
-              View All Projects <ArrowRight className="w-4 h-4 ml-3" />
-            </Button>
-          </Link>
+          <div className="mt-12 text-center">
+            <Link to="/projects">
+              <Button variant="outline" className="border-gold/30 text-gold hover:bg-gold/5 h-13 px-10 font-body text-[13px] tracking-[0.15em] uppercase rounded-none">
+                View All Projects <ArrowRight className="w-4 h-4 ml-3" />
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
