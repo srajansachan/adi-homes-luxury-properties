@@ -1,11 +1,18 @@
 import { Link } from "react-router-dom";
 import { MapPin, ChevronRight } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import SEOHead from "@/components/SEOHead";
 import { projects } from "@/data/projects";
 
 export default function Projects() {
   return (
     <div>
+      <SEOHead
+        title="Projects in Greater Noida West | Flats, Apartments & Commercial Properties | The ADI Homes"
+        description="Explore premium residential & commercial projects in Greater Noida West — 2/3/4 BHK flats, studio apartments, retail shops near Jewar Airport. Winsten Park, Saraswati Landmark, Lucky Palm Valley & more. RERA registered."
+        canonical="https://theadihomes.co.in/projects"
+        keywords="projects in Greater Noida West, flats Noida Extension, 2 BHK flat Greater Noida West, 3 BHK apartment Noida Extension, Winsten Park, Saraswati Landmark, Lucky Palm Valley, studio apartments Greater Noida, commercial shops Greater Noida West, property near Jewar Airport, new launch projects Greater Noida West"
+      />
       <section className="relative py-36 lg:py-44 bg-card">
         <div className="absolute inset-0 bg-gradient-to-b from-background to-card" />
         <div className="relative container mx-auto px-6 text-center">

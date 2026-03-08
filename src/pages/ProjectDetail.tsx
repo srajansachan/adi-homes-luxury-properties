@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { MapPin, CheckCircle, ArrowLeft, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedSection from "@/components/AnimatedSection";
+import SEOHead from "@/components/SEOHead";
 import LeadForm from "@/components/LeadForm";
 import { projects } from "@/data/projects";
 
@@ -22,6 +23,32 @@ export default function ProjectDetail() {
 
   return (
     <div>
+      <SEOHead
+        title={`${project.name} | ${project.type} in ${project.location} | The ADI Homes`}
+        description={`${project.name} — ${project.shortDescription} Price starting ${project.priceRange}. Size: ${project.sizeRange}. Book site visit with The ADI Homes. Call +91 9958004587.`}
+        canonical={`https://theadihomes.co.in/projects/${project.slug}`}
+        keywords={`${project.name}, ${project.type} ${project.location}, ${project.developer} projects, buy flat ${project.location}, property in Greater Noida West, ${project.name} price, ${project.name} floor plan, RERA project Greater Noida West`}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "RealEstateListing",
+          "name": project.name,
+          "description": project.shortDescription,
+          "url": `https://theadihomes.co.in/projects/${project.slug}`,
+          "image": `https://theadihomes.co.in${project.image}`,
+          "offers": {
+            "@type": "Offer",
+            "price": project.priceRange,
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": project.location,
+            "addressRegion": "Uttar Pradesh",
+            "addressCountry": "IN"
+          }
+        }}
+      />
       {/* Hero */}
       <section className="relative py-36 lg:py-44">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${project.image})` }}>

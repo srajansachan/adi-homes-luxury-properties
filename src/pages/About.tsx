@@ -1,4 +1,5 @@
 import AnimatedSection from "@/components/AnimatedSection";
+import SEOHead from "@/components/SEOHead";
 import { CheckCircle, Target, Eye, Heart, Award, Building2, Users, Briefcase, MapPin, Shield, TrendingUp, Handshake } from "lucide-react";
 import aboutBg from "@/assets/about-bg.jpg";
 import logoImg from "@/assets/logo.png";
@@ -38,6 +39,12 @@ const expertise = [
 export default function About() {
   return (
     <div>
+      <SEOHead
+        title="About The ADI Homes | Trusted Real Estate Consultant Greater Noida West Since 2005"
+        description="Learn about The ADI Homes — Greater Noida West's most trusted real estate consultant since 2005. 100+ happy investors, 10+ premium projects, complete transparency. Your trusted property advisor in Noida Extension."
+        canonical="https://theadihomes.co.in/about"
+        keywords="about The ADI Homes, real estate company Greater Noida West, trusted property dealer Noida Extension, real estate advisor NCR, property consultant since 2005, best real estate agent Greater Noida"
+      />
       {/* Hero */}
       <section className="relative py-36 lg:py-44">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${aboutBg})` }}>

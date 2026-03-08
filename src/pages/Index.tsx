@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedSection from "@/components/AnimatedSection";
+import SEOHead from "@/components/SEOHead";
 import { projects } from "@/data/projects";
 import heroBg from "@/assets/hero-bg.jpg";
 import logoImg from "@/assets/logo.png";
@@ -126,6 +127,12 @@ function TestimonialCard({ testimonial }: { testimonial: { name: string; role: s
 export default function Index() {
   return (
     <div className="overflow-hidden">
+      <SEOHead
+        title="The ADI Homes | Best Real Estate Consultant Greater Noida West | Flats & Property Near Jewar Airport"
+        description="The ADI Homes — #1 real estate consultant in Greater Noida West since 2005. Buy premium 2/3/4 BHK flats, studio apartments, commercial shops in Noida Extension near Jewar Airport. 100+ happy investors. Call +91 9958004587."
+        canonical="https://theadihomes.co.in/"
+        keywords="The ADI Homes, best property dealer Greater Noida West, flats in Noida Extension, 2 BHK flat Greater Noida West, 3 BHK apartment Noida Extension, property near Jewar Airport, real estate consultant Greater Noida, buy flat Greater Noida West, studio apartment Greater Noida, commercial property Noida Extension, affordable flats NCR, luxury apartments Greater Noida West, RERA registered projects Greater Noida, investment property near Jewar Airport, property dealer Noida Extension"
+      />
       {/* ═══════════════ HERO ═══════════════ */}
       <section className="relative min-h-screen flex items-center">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroBg})` }}>
@@ -485,18 +492,78 @@ export default function Index() {
         </div>
       </section>
 
+      {/* ═══════════════ FAQ — AEO/GEO SECTION ═══════════════ */}
+      <section className="py-24 lg:py-32 bg-card">
+        <div className="container mx-auto px-6 lg:px-10 max-w-4xl">
+          <AnimatedSection>
+            <div className="text-center mb-16">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="h-px w-8 bg-gold/40" />
+                <span className="text-gold text-[12px] font-medium tracking-[0.3em] uppercase">FAQs</span>
+                <div className="h-px w-8 bg-gold/40" />
+              </div>
+              <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+                Frequently Asked <span className="gold-text-gradient">Questions</span>
+              </h2>
+              <p className="text-muted-foreground">Everything you need to know about investing in Greater Noida West real estate</p>
+            </div>
+          </AnimatedSection>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "Why should I invest in Greater Noida West in 2026?",
+                a: "Greater Noida West (Noida Extension) is among the fastest-growing real estate destinations in the NCR. With the upcoming Jewar International Airport just 30 km away, new Metro extensions, FNG Expressway connectivity, and world-class infrastructure development by GNIDA, property prices are projected to appreciate 30-50% in the next 3-5 years. It offers affordable entry prices compared to Noida and Gurgaon, making it ideal for both first-time buyers and investors."
+              },
+              {
+                q: "What types of properties does The ADI Homes offer?",
+                a: "The ADI Homes offers a comprehensive range of RERA-registered properties in Greater Noida West including 2 BHK, 3 BHK & 4 BHK residential apartments, affordable builder floors, premium studio apartments, commercial retail shops, lockable office spaces, and high-street commercial spaces. Our portfolio includes projects from trusted developers like Saraswati Group, VHR Group, Lucky Group, and more."
+              },
+              {
+                q: "What is the price range of flats in Greater Noida West?",
+                a: "Property prices in Greater Noida West range from ₹25 Lakhs to ₹1.5 Crore. Affordable 2 BHK flats start at ₹30 Lakhs, premium 3 BHK apartments range from ₹45-80 Lakhs, luxury 4 BHK options start from ₹80 Lakhs, and studio apartments are available from ₹42 Lakhs. Commercial spaces start from ₹25 Lakhs onwards."
+              },
+              {
+                q: "Are all properties listed by The ADI Homes RERA registered?",
+                a: "Yes, absolutely. The ADI Homes exclusively partners with RERA-registered developers and promotes only legally compliant projects. Every property on our platform has valid RERA registration, ensuring complete legal safety, transparency, and accountability for buyers and investors."
+              },
+              {
+                q: "How can I book a site visit with The ADI Homes?",
+                a: "You can book a free site visit by calling us at +91 9958004587, sending a WhatsApp message, or filling out the enquiry form on our Contact page. Our team will arrange a guided site visit at your convenience, complete with detailed walkthroughs, location analysis, and investment projections."
+              },
+              {
+                q: "Which are the best projects near Jewar International Airport?",
+                a: "Top projects near Jewar Airport include Winsten Park at Knowledge Park 5 (studio apartments from ₹42 Lakhs), Saraswati Landmark at Sector 1 (2/3/4 BHK from ₹45 Lakhs), Lucky Palm Valley (premium residential from ₹55 Lakhs), Astor Square, and WOW Monk. All are well-connected to the airport via the Noida-Greater Noida Expressway."
+              },
+            ].map((faq, i) => (
+              <AnimatedSection key={i} delay={i * 0.08}>
+                <details className="group glass-card rounded-lg overflow-hidden">
+                  <summary className="flex items-center justify-between p-6 cursor-pointer list-none font-display text-base md:text-lg font-semibold text-foreground hover:text-gold transition-colors">
+                    <span>{faq.q}</span>
+                    <ChevronRight className="w-5 h-5 text-gold shrink-0 ml-4 transition-transform group-open:rotate-90" />
+                  </summary>
+                  <div className="px-6 pb-6 text-muted-foreground text-sm leading-relaxed border-t border-gold/10 pt-4">
+                    {faq.a}
+                  </div>
+                </details>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ═══════════════ CTA ═══════════════ */}
       <section className="relative py-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-charcoal to-background" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[120px]" />
         <div className="relative container mx-auto px-6 lg:px-10 text-center">
           <AnimatedSection>
-            <img src={logoImg} alt="The ADI Homes" className="h-24 w-24 mx-auto mb-8 opacity-60" />
+            <img src={logoImg} alt="The ADI Homes — Best Real Estate Consultant Greater Noida West" className="h-24 w-24 mx-auto mb-8 opacity-60" />
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               Ready to <span className="gold-text-gradient">Invest</span>?
             </h2>
             <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-10">
-              Let our experts guide you to the perfect property. Your dream home is one call away.
+              Let our experts guide you to the perfect property in Greater Noida West. Your dream home is one call away.
             </p>
             <div className="flex flex-wrap justify-center gap-5">
               <a href="tel:9958004587">
