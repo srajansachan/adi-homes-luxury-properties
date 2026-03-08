@@ -89,15 +89,9 @@ export default function Footer() {
       </div>
 
       <div className="luxury-divider" />
-      <div className="container mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="container mx-auto px-6 py-6 flex flex-col items-center gap-4">
         <p className="text-muted-foreground text-xs tracking-wider">
           © {new Date().getFullYear()} THE ADI HOMES. ALL RIGHTS RESERVED.
-        </p>
-        <p className="text-muted-foreground text-xs tracking-wider">
-          Marketing managed by{" "}
-          <a href="https://www.sprintstrategies.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors font-medium">
-            Sprint Strategies
-          </a>
         </p>
         <div className="flex gap-4">
           {socials.map((s, i) => (
@@ -106,6 +100,12 @@ export default function Footer() {
             </a>
           ))}
         </div>
+        <p className="text-muted-foreground text-xs tracking-wider">
+          Marketing managed by{" "}
+          <a href="https://www.sprintstrategies.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors font-medium">
+            Sprint Strategies
+          </a>
+        </p>
       </div>
     </footer>
   );
