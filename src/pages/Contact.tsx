@@ -13,6 +13,12 @@ const contactInfo = [
 export default function Contact() {
   return (
     <div>
+      <SEOHead
+        title="Contact The ADI Homes | Property Consultation Greater Noida West | Call +91 9958004587"
+        description="Contact The ADI Homes for free property consultation in Greater Noida West. Get expert advice on flats, apartments & commercial properties in Noida Extension. Call +91 9958004587 or visit our office."
+        canonical="https://theadihomes.co.in/contact"
+        keywords="contact The ADI Homes, property consultation Greater Noida West, real estate enquiry Noida Extension, book site visit Greater Noida, property dealer contact number, free property consultation NCR"
+      />
       <section className="relative py-36 lg:py-44 bg-card">
         <div className="absolute inset-0 bg-gradient-to-b from-background to-card" />
         <div className="relative container mx-auto px-6 text-center">
