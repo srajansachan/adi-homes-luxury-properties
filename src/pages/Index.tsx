@@ -369,7 +369,7 @@ export default function Index() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((step, i) => (
               <AnimatedSection key={i} delay={i * 0.12} direction="up">
-                <div className="relative bg-card p-8 border border-border hover:border-gold/20 transition-all duration-500 h-full">
+                <div className="relative glass p-8 hover:border-gold/20 transition-all duration-500 h-full rounded-lg">
                   <div className="font-display text-6xl font-bold text-gold/10 absolute top-4 right-6">
                     {String(i + 1).padStart(2, "0")}
                   </div>
