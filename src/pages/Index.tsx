@@ -48,21 +48,57 @@ const processSteps = [
   { icon: Handshake, title: "Seamless Closure", desc: "We handle negotiations, documentation, legal checks, and registration — so you don't have to worry." },
 ];
 
-const testimonials = [
+const testimonialsCol1 = [
   {
     name: "Rajesh Kumar",
     role: "Investor, Winsten Park",
     quote: "The ADI Homes made my first real estate investment incredibly simple. Their transparency and market knowledge gave me confidence to invest in Greater Noida West.",
+    rating: 5,
   },
   {
     name: "Priya Sharma",
     role: "Homeowner, Saraswati Landmark",
     quote: "From the very first consultation to getting the keys, the team was with us at every step. We found our dream home thanks to The ADI Homes.",
+    rating: 5,
   },
+  {
+    name: "Sunil Gupta",
+    role: "Investor, Lucky Palm Valley",
+    quote: "Excellent service and complete transparency throughout. The team helped me understand every detail of the investment and I'm very happy with the returns.",
+    rating: 5,
+  },
+  {
+    name: "Neha Agarwal",
+    role: "Homeowner, Winsten Park",
+    quote: "Professional, honest, and incredibly helpful. The ADI Homes made our home buying journey stress-free. Highly recommend their services to anyone looking in Noida Extension.",
+    rating: 5,
+  },
+];
+
+const testimonialsCol2 = [
   {
     name: "Amit Verma",
     role: "Investor, Lucky Palm Valley",
     quote: "I've invested in multiple properties through The ADI Homes. Their market insights and honest advice have helped me build a strong real estate portfolio.",
+    rating: 5,
+  },
+  {
+    name: "Deepak Malhotra",
+    role: "Investor, Saraswati Landmark",
+    quote: "What sets The ADI Homes apart is their deep knowledge of Greater Noida West. They guided me to the right property at the right price. Couldn't be happier.",
+    rating: 5,
+  },
+  {
+    name: "Kavita Singh",
+    role: "Homeowner, Winsten Park",
+    quote: "The team's dedication is unmatched. They followed up even after possession to make sure everything was perfect. Truly a white-glove experience.",
+    rating: 4,
+  },
+  {
+    name: "Rahul Jain",
+    role: "Investor",
+    quote: "Best real estate consultants in Greater Noida West. They understand the market like no one else and their after-sales service is outstanding.",
+    rating: 5,
   },
 ];
 
