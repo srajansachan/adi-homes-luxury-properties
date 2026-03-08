@@ -227,41 +227,6 @@ export default function Index() {
         <div className="luxury-divider" />
       </section>
 
-      {/* ═══════════════ WHY CHOOSE US ═══════════════ */}
-      <section className="py-24 lg:py-32">
-        <div className="container mx-auto px-6 lg:px-10">
-          <AnimatedSection>
-            <div className="text-center max-w-2xl mx-auto mb-20">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="h-px w-8 bg-gold/40" />
-                <span className="text-gold text-[12px] font-medium tracking-[0.3em] uppercase">The ADI Difference</span>
-                <div className="h-px w-8 bg-gold/40" />
-              </div>
-              <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-                Why Choose <span className="gold-text-gradient">The ADI Homes</span>
-              </h2>
-              <p className="text-muted-foreground text-base leading-relaxed">
-                With over two decades of experience in the NCR real estate market, we've helped hundreds of families and investors find their perfect property. Our commitment to transparency, quality, and customer satisfaction sets us apart.
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((f, i) => (
-              <AnimatedSection key={i} delay={i * 0.12} direction="up">
-                <div className="group glass-gold p-8 hover:border-gold/20 transition-all duration-500 h-full rounded-lg">
-                  <div className="w-12 h-12 border border-gold/20 flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-all duration-300">
-                    <f.icon className="w-5 h-5 text-gold" />
-                  </div>
-                  <h3 className="font-display text-xl font-semibold mb-3 tracking-wide">{f.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{f.desc}</p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════ FEATURED PROJECTS — INFINITE SCROLL ═══════════════ */}
       <section className="py-24 lg:py-32 bg-card overflow-hidden">
         <div className="container mx-auto px-6 lg:px-10 mb-16">
@@ -347,37 +312,34 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ═══════════════ HOW WE WORK ═══════════════ */}
+      {/* ═══════════════ WHY CHOOSE US ═══════════════ */}
       <section className="py-24 lg:py-32">
         <div className="container mx-auto px-6 lg:px-10">
           <AnimatedSection>
             <div className="text-center max-w-2xl mx-auto mb-20">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <div className="h-px w-8 bg-gold/40" />
-                <span className="text-gold text-[12px] font-medium tracking-[0.3em] uppercase">Our Process</span>
+                <span className="text-gold text-[12px] font-medium tracking-[0.3em] uppercase">The ADI Difference</span>
                 <div className="h-px w-8 bg-gold/40" />
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-                How We <span className="gold-text-gradient">Work</span>
+                Why Choose <span className="gold-text-gradient">The ADI Homes</span>
               </h2>
-              <p className="text-muted-foreground">
-                A seamless four-step journey from your first enquiry to the keys of your new property. We handle everything so you can focus on what matters.
+              <p className="text-muted-foreground text-base leading-relaxed">
+                With over two decades of experience in the NCR real estate market, we've helped hundreds of families and investors find their perfect property. Our commitment to transparency, quality, and customer satisfaction sets us apart.
               </p>
             </div>
           </AnimatedSection>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {processSteps.map((step, i) => (
+            {features.map((f, i) => (
               <AnimatedSection key={i} delay={i * 0.12} direction="up">
-                <div className="relative glass p-8 hover:border-gold/20 transition-all duration-500 h-full rounded-lg">
-                  <div className="font-display text-6xl font-bold text-gold/10 absolute top-4 right-6">
-                    {String(i + 1).padStart(2, "0")}
+                <div className="group glass-gold p-8 hover:border-gold/20 transition-all duration-500 h-full rounded-lg">
+                  <div className="w-12 h-12 border border-gold/20 flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-all duration-300">
+                    <f.icon className="w-5 h-5 text-gold" />
                   </div>
-                  <div className="w-12 h-12 border border-gold/20 flex items-center justify-center mb-6">
-                    <step.icon className="w-5 h-5 text-gold" />
-                  </div>
-                  <h3 className="font-display text-xl font-semibold mb-3">{step.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{step.desc}</p>
+                  <h3 className="font-display text-xl font-semibold mb-3 tracking-wide">{f.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{f.desc}</p>
                 </div>
               </AnimatedSection>
             ))}
