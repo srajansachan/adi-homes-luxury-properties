@@ -76,7 +76,7 @@ export default function LeadForm({ className = "", selectedProject }: LeadFormPr
       <Button
         type="submit"
         disabled={loading}
-        className="w-full h-12 bg-gold text-background font-body font-semibold hover:bg-gold-dark text-sm tracking-[0.15em] uppercase transition-all duration-300"
+        className="w-full h-12 gradient-gold text-background font-body font-semibold hover:opacity-90 text-sm tracking-[0.15em] uppercase transition-all duration-300"
       >
         {loading ? "Submitting..." : "Schedule Consultation"}
       </Button>

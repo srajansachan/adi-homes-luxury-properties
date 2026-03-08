@@ -174,7 +174,7 @@ export default function Index() {
               className="flex flex-wrap gap-5"
             >
               <Link to="/projects">
-                <Button className="bg-gold text-background hover:bg-gold-dark h-13 px-10 font-body font-semibold text-[13px] tracking-[0.15em] uppercase rounded-none transition-all duration-300">
+                <Button className="gradient-gold text-background hover:opacity-90 h-13 px-10 font-body font-semibold text-[13px] tracking-[0.15em] uppercase rounded-none transition-all duration-300">
                   Explore Projects <ArrowRight className="w-4 h-4 ml-3" />
                 </Button>
               </Link>
@@ -311,7 +311,7 @@ export default function Index() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                     <div className="absolute bottom-4 left-4">
-                      <span className="text-[11px] font-medium bg-gold text-background px-3 py-1 tracking-[0.15em] uppercase">
+                      <span className="text-[11px] font-medium gradient-gold text-background px-3 py-1 tracking-[0.15em] uppercase">
                         {project.status}
                       </span>
                     </div>
@@ -538,7 +538,7 @@ export default function Index() {
             </p>
             <div className="flex flex-wrap justify-center gap-5">
               <a href="tel:9958004587">
-                <Button className="bg-gold text-background hover:bg-gold-dark h-13 px-10 font-body font-semibold text-[13px] tracking-[0.15em] uppercase rounded-none">
+                <Button className="gradient-gold text-background hover:opacity-90 h-13 px-10 font-body font-semibold text-[13px] tracking-[0.15em] uppercase rounded-none">
                   <Phone className="w-4 h-4 mr-3" /> +91 9958004587
                 </Button>
               </a>

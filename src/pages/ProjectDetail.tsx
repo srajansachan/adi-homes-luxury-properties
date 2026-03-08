@@ -33,7 +33,7 @@ export default function ProjectDetail() {
               <ArrowLeft className="w-4 h-4 mr-2" /> Back to Projects
             </Link>
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-[11px] font-medium bg-gold text-background px-3 py-1 tracking-[0.15em] uppercase">{project.status}</span>
+              <span className="text-[11px] font-medium gradient-gold text-background px-3 py-1 tracking-[0.15em] uppercase">{project.status}</span>
               <span className="text-xs text-muted-foreground tracking-wider uppercase">{project.type}</span>
             </div>
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-3">{project.name}</h1>
@@ -133,7 +133,7 @@ export default function ProjectDetail() {
                 <div className="bg-card p-6 border border-gold/10 text-center">
                   <p className="text-muted-foreground text-sm mb-4">Speak to our property expert</p>
                   <a href="tel:9958004587">
-                    <Button className="bg-gold text-background hover:bg-gold-dark w-full h-12 font-body font-semibold text-[13px] tracking-[0.15em] uppercase rounded-none">
+                    <Button className="gradient-gold text-background hover:opacity-90 w-full h-12 font-body font-semibold text-[13px] tracking-[0.15em] uppercase rounded-none">
                       <Phone className="w-4 h-4 mr-3" /> +91 9958004587
                     </Button>
                   </a>
