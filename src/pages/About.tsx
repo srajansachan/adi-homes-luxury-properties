@@ -1,4 +1,5 @@
 import AnimatedSection from "@/components/AnimatedSection";
+import SEOHead from "@/components/SEOHead";
 import { CheckCircle, Target, Eye, Heart, Award, Building2, Users, Briefcase, MapPin, Shield, TrendingUp, Handshake } from "lucide-react";
 import aboutBg from "@/assets/about-bg.jpg";
 import logoImg from "@/assets/logo.png";

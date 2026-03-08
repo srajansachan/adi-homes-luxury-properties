@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { MapPin, ChevronRight } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import SEOHead from "@/components/SEOHead";
 import { projects } from "@/data/projects";
 
 export default function Projects() {

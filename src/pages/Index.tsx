@@ -127,6 +127,12 @@ function TestimonialCard({ testimonial }: { testimonial: { name: string; role: s
 export default function Index() {
   return (
     <div className="overflow-hidden">
+      <SEOHead
+        title="The ADI Homes | Best Real Estate Consultant Greater Noida West | Flats & Property Near Jewar Airport"
+        description="The ADI Homes — #1 real estate consultant in Greater Noida West since 2005. Buy premium 2/3/4 BHK flats, studio apartments, commercial shops in Noida Extension near Jewar Airport. 100+ happy investors. Call +91 9958004587."
+        canonical="https://theadihomes.co.in/"
+        keywords="The ADI Homes, best property dealer Greater Noida West, flats in Noida Extension, 2 BHK flat Greater Noida West, 3 BHK apartment Noida Extension, property near Jewar Airport, real estate consultant Greater Noida, buy flat Greater Noida West, studio apartment Greater Noida, commercial property Noida Extension, affordable flats NCR, luxury apartments Greater Noida West, RERA registered projects Greater Noida, investment property near Jewar Airport, property dealer Noida Extension"
+      />
       {/* ═══════════════ HERO ═══════════════ */}
       <section className="relative min-h-screen flex items-center">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroBg})` }}>

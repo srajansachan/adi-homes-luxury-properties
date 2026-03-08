@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { MapPin, CheckCircle, ArrowLeft, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedSection from "@/components/AnimatedSection";
+import SEOHead from "@/components/SEOHead";
 import LeadForm from "@/components/LeadForm";
 import { projects } from "@/data/projects";
 
