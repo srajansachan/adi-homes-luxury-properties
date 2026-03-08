@@ -174,7 +174,7 @@ export default function Index() {
               className="flex flex-wrap gap-5"
             >
               <Link to="/projects">
-                <Button className="bg-gold text-background hover:bg-gold-dark h-13 px-10 font-body font-semibold text-[13px] tracking-[0.15em] uppercase rounded-none transition-all duration-300">
+                <Button className="gradient-gold text-background hover:opacity-90 h-13 px-10 font-body font-semibold text-[13px] tracking-[0.15em] uppercase rounded-none transition-all duration-300">
                   Explore Projects <ArrowRight className="w-4 h-4 ml-3" />
                 </Button>
               </Link>
