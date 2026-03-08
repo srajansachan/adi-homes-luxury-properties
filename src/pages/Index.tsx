@@ -278,8 +278,9 @@ export default function Index() {
                   <div className="aspect-[4/3] overflow-hidden relative">
                     <img
                       src={project.image}
-                      alt={project.name}
+                      alt={`${project.name} - ${project.type} in ${project.location}`}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                     <div className="absolute bottom-4 left-4">

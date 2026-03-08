@@ -43,8 +43,9 @@ export default function Projects() {
                       <div className="aspect-[4/3] overflow-hidden group relative">
                         <img
                           src={project.image}
-                          alt={project.name}
+                          alt={`${project.name} - ${project.type} in ${project.location}`}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                          loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
                       </div>
