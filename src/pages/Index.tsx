@@ -497,22 +497,22 @@ export default function Index() {
 
             <AnimatedSection direction="right">
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-card p-8 border border-border gold-border-glow">
+                <div className="glass-gold p-8 rounded-lg">
                   <Award className="w-8 h-8 text-gold mb-4" />
                   <div className="font-display text-3xl font-bold gold-text-gradient">20+</div>
                   <div className="text-muted-foreground text-sm mt-1">Years in Real Estate</div>
                 </div>
-                <div className="bg-card p-8 border border-border gold-border-glow">
+                <div className="glass-gold p-8 rounded-lg">
                   <Building2 className="w-8 h-8 text-gold mb-4" />
                   <div className="font-display text-3xl font-bold gold-text-gradient">10+</div>
                   <div className="text-muted-foreground text-sm mt-1">Partner Developers</div>
                 </div>
-                <div className="bg-card p-8 border border-border gold-border-glow">
+                <div className="glass-gold p-8 rounded-lg">
                   <Users className="w-8 h-8 text-gold mb-4" />
                   <div className="font-display text-3xl font-bold gold-text-gradient">100+</div>
                   <div className="text-muted-foreground text-sm mt-1">Happy Investors</div>
                 </div>
-                <div className="bg-card p-8 border border-border gold-border-glow">
+                <div className="glass-gold p-8 rounded-lg">
                   <Clock className="w-8 h-8 text-gold mb-4" />
                   <div className="font-display text-3xl font-bold gold-text-gradient">24hr</div>
                   <div className="text-muted-foreground text-sm mt-1">Response Time</div>
