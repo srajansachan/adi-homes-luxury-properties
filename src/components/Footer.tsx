@@ -92,6 +92,12 @@ export default function Footer() {
         <p className="text-muted-foreground text-xs tracking-wider">
           © {new Date().getFullYear()} THE ADI HOMES. ALL RIGHTS RESERVED.
         </p>
+        <p className="text-muted-foreground text-xs tracking-wider">
+          Marketing managed by{" "}
+          <a href="https://www.sprintstrategies.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors font-medium">
+            Sprint Strategies
+          </a>
+        </p>
         <div className="flex gap-4">
           {socials.map((s, i) => (
             <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-gold transition-colors">
