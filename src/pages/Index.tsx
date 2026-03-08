@@ -311,7 +311,7 @@ export default function Index() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                     <div className="absolute bottom-4 left-4">
-                      <span className="text-[11px] font-medium bg-gold text-background px-3 py-1 tracking-[0.15em] uppercase">
+                      <span className="text-[11px] font-medium gradient-gold text-background px-3 py-1 tracking-[0.15em] uppercase">
                         {project.status}
                       </span>
                     </div>

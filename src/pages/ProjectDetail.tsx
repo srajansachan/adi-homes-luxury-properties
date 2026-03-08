@@ -33,7 +33,7 @@ export default function ProjectDetail() {
               <ArrowLeft className="w-4 h-4 mr-2" /> Back to Projects
             </Link>
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-[11px] font-medium bg-gold text-background px-3 py-1 tracking-[0.15em] uppercase">{project.status}</span>
+              <span className="text-[11px] font-medium gradient-gold text-background px-3 py-1 tracking-[0.15em] uppercase">{project.status}</span>
               <span className="text-xs text-muted-foreground tracking-wider uppercase">{project.type}</span>
             </div>
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-3">{project.name}</h1>
