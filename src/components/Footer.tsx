@@ -52,14 +52,15 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Projects */}
+          {/* Legal */}
           <div>
-            <h4 className="font-display text-xl font-semibold text-gold mb-6 tracking-wide">Projects</h4>
+            <h4 className="font-display text-xl font-semibold text-gold mb-6 tracking-wide">Legal</h4>
             <div className="flex flex-col gap-3">
               {[
-                { label: "Winsten Park", path: "/projects/winsten-park" },
-                { label: "Saraswati Landmark", path: "/projects/saraswati-landmark" },
-                { label: "Lucky Palm Valley", path: "/projects/lucky-palm-valley" },
+                { label: "Privacy Policy", path: "/privacy-policy" },
+                { label: "Terms & Conditions", path: "/terms" },
+                { label: "Disclaimer", path: "/disclaimer" },
+                { label: "Refund Policy", path: "/refund-policy" },
               ].map((l) => (
                 <Link key={l.path} to={l.path} className="text-muted-foreground text-sm hover:text-gold transition-colors tracking-wide">
                   {l.label}
