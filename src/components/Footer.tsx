@@ -1,18 +1,17 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import logoImg from "@/assets/logo.png";
 
 const socials = [
-  { label: "Fb", href: "https://www.facebook.com/spaceplanner13/" },
-  { label: "Ig", href: "https://www.instagram.com/theadihomes/" },
-  { label: "Li", href: "https://www.linkedin.com/company/the-adi-homes/" },
-  { label: "Yt", href: "https://www.youtube.com/@theadihomes" },
+  { icon: Facebook, href: "https://www.facebook.com/spaceplanner13/" },
+  { icon: Instagram, href: "https://www.instagram.com/theadihomes/" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/the-adi-homes/" },
+  { icon: Youtube, href: "https://www.youtube.com/@theadihomes" },
 ];
 
 export default function Footer() {
   return (
     <footer className="bg-background border-t border-gold/10">
-      {/* Gold accent line */}
       <div className="luxury-divider" />
 
       <div className="container mx-auto px-6 lg:px-10 py-20">
@@ -24,15 +23,15 @@ export default function Footer() {
               Where Money Grows. Premium real estate investments in Greater Noida West since 2005.
             </p>
             <div className="flex gap-3">
-              {socials.map((s) => (
+              {socials.map((s, i) => (
                 <a
-                  key={s.label}
+                  key={i}
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 border border-gold/20 flex items-center justify-center text-gold/60 hover:bg-gold hover:text-background transition-all duration-300 text-xs font-semibold uppercase"
+                  className="w-10 h-10 border border-gold/20 flex items-center justify-center text-gold/60 hover:bg-gold hover:text-background transition-all duration-300"
                 >
-                  {s.label}
+                  <s.icon className="w-4 h-4" />
                 </a>
               ))}
             </div>
@@ -93,9 +92,13 @@ export default function Footer() {
         <p className="text-muted-foreground text-xs tracking-wider">
           © {new Date().getFullYear()} THE ADI HOMES. ALL RIGHTS RESERVED.
         </p>
-        <p className="text-muted-foreground text-xs tracking-wider">
-          WHERE MONEY GROWS — SINCE 2005
-        </p>
+        <div className="flex gap-4">
+          {socials.map((s, i) => (
+            <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-gold transition-colors">
+              <s.icon className="w-4 h-4" />
+            </a>
+          ))}
+        </div>
       </div>
     </footer>
   );

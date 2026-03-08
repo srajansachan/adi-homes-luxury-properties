@@ -1,16 +1,19 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Building2, Shield, TrendingUp, Users, MapPin, Phone, ChevronRight, Star } from "lucide-react";
+import {
+  ArrowRight, Building2, Shield, TrendingUp, Users, MapPin, Phone,
+  ChevronRight, Star, Award, Handshake, Clock, Home, BarChart3,
+  CheckCircle, Quote, Facebook, Instagram, Linkedin, Youtube
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedSection from "@/components/AnimatedSection";
-import LeadForm from "@/components/LeadForm";
 import { projects } from "@/data/projects";
 import heroBg from "@/assets/hero-bg.jpg";
 import logoImg from "@/assets/logo.png";
 
 const stats = [
-  { number: "50+", label: "Happy Families" },
-  { number: "3+", label: "Premium Projects" },
+  { number: "100+", label: "Happy Investors" },
+  { number: "10+", label: "Premium Projects" },
   { number: "Since", label: "2005" },
   { number: "100%", label: "Transparency" },
 ];
@@ -19,119 +22,143 @@ const features = [
   {
     icon: Building2,
     title: "Curated Properties",
-    desc: "Handpicked luxury residences and commercial spaces from RERA-registered developers in Greater Noida West.",
+    desc: "Handpicked luxury residences and commercial spaces from RERA-registered developers in Greater Noida West's most premium locations.",
   },
   {
     icon: Shield,
     title: "Absolute Trust",
-    desc: "Complete transparency at every step — from pricing to documentation to possession.",
+    desc: "Complete transparency at every step — from pricing to documentation to possession. No hidden charges, no surprises.",
   },
   {
     icon: TrendingUp,
     title: "Smart Investments",
-    desc: "Strategic locations near expressways, metro & Jewar Airport ensuring exceptional capital appreciation.",
+    desc: "Strategic locations near expressways, metro & Jewar Airport ensuring exceptional capital appreciation and rental yields.",
   },
   {
     icon: Users,
     title: "White Glove Service",
-    desc: "Dedicated relationship managers providing personalized guidance through your entire property journey.",
+    desc: "Dedicated relationship managers providing personalized guidance through your entire property journey from search to keys.",
   },
 ];
+
+const processSteps = [
+  { icon: Home, title: "Property Discovery", desc: "We understand your requirements, budget, and preferences to shortlist the perfect properties for you." },
+  { icon: MapPin, title: "Site Visits", desc: "Our team arranges guided site visits with detailed walkthroughs of every shortlisted property." },
+  { icon: BarChart3, title: "Investment Analysis", desc: "Get detailed ROI projections, price comparisons, and market trends analysis before you decide." },
+  { icon: Handshake, title: "Seamless Closure", desc: "We handle negotiations, documentation, legal checks, and registration — so you don't have to worry." },
+];
+
+const testimonials = [
+  {
+    name: "Rajesh Kumar",
+    role: "Investor, Winsten Park",
+    quote: "The ADI Homes made my first real estate investment incredibly simple. Their transparency and market knowledge gave me confidence to invest in Greater Noida West.",
+  },
+  {
+    name: "Priya Sharma",
+    role: "Homeowner, Saraswati Landmark",
+    quote: "From the very first consultation to getting the keys, the team was with us at every step. We found our dream home thanks to The ADI Homes.",
+  },
+  {
+    name: "Amit Verma",
+    role: "Investor, Lucky Palm Valley",
+    quote: "I've invested in multiple properties through The ADI Homes. Their market insights and honest advice have helped me build a strong real estate portfolio.",
+  },
+];
+
+// Duplicate projects for infinite scroll
+const scrollProjects = [...projects, ...projects, ...projects, ...projects];
 
 export default function Index() {
   return (
     <div className="overflow-hidden">
-      {/* HERO */}
+      {/* ═══════════════ HERO ═══════════════ */}
       <section className="relative min-h-screen flex items-center">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroBg})` }}>
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/40" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
         </div>
 
         <div className="relative container mx-auto px-6 lg:px-10 pt-24">
-          <div className="grid lg:grid-cols-5 gap-16 items-center min-h-[85vh]">
-            {/* Left — 3 cols */}
-            <div className="lg:col-span-3">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 0.3 }}
-                className="flex items-center gap-3 mb-8"
-              >
-                <div className="h-px w-12 bg-gold/50" />
-                <span className="font-body text-gold text-[13px] font-medium tracking-[0.3em] uppercase">
-                  Where Money Grows
-                </span>
-              </motion.div>
+          <div className="max-w-3xl min-h-[85vh] flex flex-col justify-center">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="flex items-center gap-3 mb-8"
+            >
+              <div className="h-px w-12 bg-gold/50" />
+              <span className="font-body text-gold text-[13px] font-medium tracking-[0.3em] uppercase">
+                Where Money Grows — Since 2005
+              </span>
+            </motion.div>
 
-              <motion.h1
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] mb-8"
-              >
-                <span className="text-foreground">Luxury</span>
-                <br />
-                <span className="gold-text-gradient">Redefined</span>
-              </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] mb-8"
+            >
+              <span className="text-foreground">Luxury</span>
+              <br />
+              <span className="gold-text-gradient">Redefined.</span>
+            </motion.h1>
 
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.7 }}
-                className="text-muted-foreground text-lg md:text-xl leading-relaxed mb-10 max-w-xl"
-              >
-                Discover premium apartments, studios & investment opportunities in Greater Noida West's most coveted addresses.
-              </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="text-muted-foreground text-lg md:text-xl leading-relaxed mb-10 max-w-2xl"
+            >
+              Discover premium apartments, studios & investment opportunities in Greater Noida West's most coveted addresses. Trusted by 100+ investors across the NCR.
+            </motion.p>
 
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.9 }}
-                className="flex flex-wrap gap-5"
-              >
-                <Link to="/projects">
-                  <Button className="bg-gold text-background hover:bg-gold-dark h-13 px-10 font-body font-semibold text-[13px] tracking-[0.15em] uppercase rounded-none transition-all duration-300">
-                    Explore Projects <ArrowRight className="w-4 h-4 ml-3" />
-                  </Button>
-                </Link>
-                <a href="tel:9958004587">
-                  <Button variant="outline" className="border-gold/30 text-gold hover:bg-gold/5 h-13 px-10 font-body text-[13px] tracking-[0.15em] uppercase rounded-none">
-                    <Phone className="w-4 h-4 mr-3" /> +91 9958004587
-                  </Button>
-                </a>
-              </motion.div>
-            </div>
-
-            {/* Right — Lead Form — 2 cols */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="lg:col-span-2"
+              transition={{ duration: 0.8, delay: 0.9 }}
+              className="flex flex-wrap gap-5"
             >
-              <div className="bg-card/90 backdrop-blur-xl p-8 border border-gold/10 gold-border-glow">
-                <div className="flex items-center gap-2 mb-1">
-                  <Star className="w-4 h-4 text-gold fill-gold" />
-                  <span className="text-gold text-xs font-medium tracking-[0.2em] uppercase">Free Consultation</span>
-                </div>
-                <h3 className="font-display text-2xl font-semibold text-foreground mb-1">
-                  Book Your Visit
-                </h3>
-                <p className="text-muted-foreground text-sm mb-6">
-                  Our experts will call you within 30 minutes
-                </p>
-                <LeadForm />
-              </div>
+              <Link to="/projects">
+                <Button className="bg-gold text-background hover:bg-gold-dark h-13 px-10 font-body font-semibold text-[13px] tracking-[0.15em] uppercase rounded-none transition-all duration-300">
+                  Explore Projects <ArrowRight className="w-4 h-4 ml-3" />
+                </Button>
+              </Link>
+              <a href="tel:9958004587">
+                <Button variant="outline" className="border-gold/30 text-gold hover:bg-gold/5 h-13 px-10 font-body text-[13px] tracking-[0.15em] uppercase rounded-none">
+                  <Phone className="w-4 h-4 mr-3" /> +91 9958004587
+                </Button>
+              </a>
+            </motion.div>
+
+            {/* Social icons in hero */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+              className="flex items-center gap-4 mt-12"
+            >
+              <span className="text-muted-foreground text-xs tracking-[0.2em] uppercase">Follow Us</span>
+              <div className="h-px w-6 bg-gold/30" />
+              {[
+                { icon: Facebook, href: "https://www.facebook.com/spaceplanner13/" },
+                { icon: Instagram, href: "https://www.instagram.com/theadihomes/" },
+                { icon: Linkedin, href: "https://www.linkedin.com/company/the-adi-homes/" },
+                { icon: Youtube, href: "https://www.youtube.com/@theadihomes" },
+              ].map((s, i) => (
+                <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-gold transition-colors">
+                  <s.icon className="w-4 h-4" />
+                </a>
+              ))}
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* STATS */}
+      {/* ═══════════════ STATS ═══════════════ */}
       <section className="relative py-6">
         <div className="luxury-divider" />
-        <div className="container mx-auto px-6 lg:px-10 py-10">
+        <div className="container mx-auto px-6 lg:px-10 py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((s, i) => (
               <AnimatedSection key={i} delay={i * 0.1}>
@@ -146,7 +173,7 @@ export default function Index() {
         <div className="luxury-divider" />
       </section>
 
-      {/* WHY CHOOSE US */}
+      {/* ═══════════════ WHY CHOOSE US ═══════════════ */}
       <section className="py-24 lg:py-32">
         <div className="container mx-auto px-6 lg:px-10">
           <AnimatedSection>
@@ -159,8 +186,8 @@ export default function Index() {
               <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
                 Why Choose <span className="gold-text-gradient">The ADI Homes</span>
               </h2>
-              <p className="text-muted-foreground text-base">
-                Two decades of trust, transparency, and unmatched expertise in real estate.
+              <p className="text-muted-foreground text-base leading-relaxed">
+                With over two decades of experience in the NCR real estate market, we've helped hundreds of families and investors find their perfect property. Our commitment to transparency, quality, and customer satisfaction sets us apart.
               </p>
             </div>
           </AnimatedSection>
@@ -181,11 +208,11 @@ export default function Index() {
         </div>
       </section>
 
-      {/* PROJECTS */}
-      <section className="py-24 lg:py-32 bg-card">
-        <div className="container mx-auto px-6 lg:px-10">
+      {/* ═══════════════ FEATURED PROJECTS — INFINITE SCROLL ═══════════════ */}
+      <section className="py-24 lg:py-32 bg-card overflow-hidden">
+        <div className="container mx-auto px-6 lg:px-10 mb-16">
           <AnimatedSection>
-            <div className="text-center max-w-2xl mx-auto mb-20">
+            <div className="text-center max-w-2xl mx-auto">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <div className="h-px w-8 bg-gold/40" />
                 <span className="text-gold text-[12px] font-medium tracking-[0.3em] uppercase">Portfolio</span>
@@ -195,54 +222,216 @@ export default function Index() {
                 Featured <span className="gold-text-gradient">Projects</span>
               </h2>
               <p className="text-muted-foreground">
-                Carefully selected premium properties in Greater Noida West's prime locations.
+                Carefully selected premium properties in Greater Noida West's prime locations — residential townships, luxury apartments, and smart commercial spaces.
+              </p>
+            </div>
+          </AnimatedSection>
+        </div>
+
+        {/* Infinite horizontal scroll */}
+        <div className="relative">
+          <motion.div
+            className="flex gap-8"
+            animate={{ x: [0, -(projects.length * 420)] }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 25,
+                ease: "linear",
+              },
+            }}
+          >
+            {scrollProjects.map((project, i) => (
+              <Link
+                key={`${project.id}-${i}`}
+                to={`/projects/${project.slug}`}
+                className="group block shrink-0 w-[380px]"
+              >
+                <div className="bg-background border border-border hover:border-gold/20 transition-all duration-500 overflow-hidden luxury-shadow">
+                  <div className="aspect-[4/3] overflow-hidden relative">
+                    <img
+                      src={project.image}
+                      alt={project.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+                    <div className="absolute bottom-4 left-4">
+                      <span className="text-[11px] font-medium bg-gold text-background px-3 py-1 tracking-[0.15em] uppercase">
+                        {project.status}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-muted-foreground text-xs tracking-[0.15em] uppercase mb-2">{project.type}</p>
+                    <h3 className="font-display text-2xl font-bold group-hover:text-gold transition-colors duration-300 mb-2">
+                      {project.name}
+                    </h3>
+                    <p className="flex items-center gap-1.5 text-muted-foreground text-sm mb-4">
+                      <MapPin className="w-3.5 h-3.5 text-gold/60" /> {project.location}
+                    </p>
+                    <div className="luxury-divider mb-4" />
+                    <div className="flex items-center justify-between">
+                      <span className="font-display text-xl font-bold text-gold">{project.priceRange}</span>
+                      <span className="flex items-center text-gold text-xs font-medium tracking-[0.15em] uppercase group-hover:translate-x-1 transition-transform">
+                        Details <ChevronRight className="w-3.5 h-3.5 ml-1" />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </motion.div>
+        </div>
+
+        <div className="container mx-auto px-6 lg:px-10 mt-12 text-center">
+          <Link to="/projects">
+            <Button variant="outline" className="border-gold/30 text-gold hover:bg-gold/5 h-13 px-10 font-body text-[13px] tracking-[0.15em] uppercase rounded-none">
+              View All Projects <ArrowRight className="w-4 h-4 ml-3" />
+            </Button>
+          </Link>
+        </div>
+      </section>
+
+      {/* ═══════════════ HOW WE WORK ═══════════════ */}
+      <section className="py-24 lg:py-32">
+        <div className="container mx-auto px-6 lg:px-10">
+          <AnimatedSection>
+            <div className="text-center max-w-2xl mx-auto mb-20">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="h-px w-8 bg-gold/40" />
+                <span className="text-gold text-[12px] font-medium tracking-[0.3em] uppercase">Our Process</span>
+                <div className="h-px w-8 bg-gold/40" />
+              </div>
+              <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+                How We <span className="gold-text-gradient">Work</span>
+              </h2>
+              <p className="text-muted-foreground">
+                A seamless four-step journey from your first enquiry to the keys of your new property. We handle everything so you can focus on what matters.
               </p>
             </div>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, i) => (
-              <AnimatedSection key={project.id} delay={i * 0.15} direction="up">
-                <Link to={`/projects/${project.slug}`} className="group block">
-                  <div className="bg-background border border-border hover:border-gold/20 transition-all duration-500 overflow-hidden luxury-shadow">
-                    <div className="aspect-[4/3] overflow-hidden relative">
-                      <img
-                        src={project.image}
-                        alt={project.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-                      <div className="absolute bottom-4 left-4">
-                        <span className="text-[11px] font-medium bg-gold text-background px-3 py-1 tracking-[0.15em] uppercase">
-                          {project.status}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="p-6">
-                      <p className="text-muted-foreground text-xs tracking-[0.15em] uppercase mb-2">{project.type}</p>
-                      <h3 className="font-display text-2xl font-bold group-hover:text-gold transition-colors duration-300 mb-2">
-                        {project.name}
-                      </h3>
-                      <p className="flex items-center gap-1.5 text-muted-foreground text-sm mb-4">
-                        <MapPin className="w-3.5 h-3.5 text-gold/60" /> {project.location}
-                      </p>
-                      <div className="luxury-divider mb-4" />
-                      <div className="flex items-center justify-between">
-                        <span className="font-display text-xl font-bold text-gold">{project.priceRange}</span>
-                        <span className="flex items-center text-gold text-xs font-medium tracking-[0.15em] uppercase group-hover:translate-x-1 transition-transform">
-                          Details <ChevronRight className="w-3.5 h-3.5 ml-1" />
-                        </span>
-                      </div>
-                    </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {processSteps.map((step, i) => (
+              <AnimatedSection key={i} delay={i * 0.12} direction="up">
+                <div className="relative bg-card p-8 border border-border hover:border-gold/20 transition-all duration-500 h-full">
+                  <div className="font-display text-6xl font-bold text-gold/10 absolute top-4 right-6">
+                    {String(i + 1).padStart(2, "0")}
                   </div>
-                </Link>
+                  <div className="w-12 h-12 border border-gold/20 flex items-center justify-center mb-6">
+                    <step.icon className="w-5 h-5 text-gold" />
+                  </div>
+                  <h3 className="font-display text-xl font-semibold mb-3">{step.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{step.desc}</p>
+                </div>
               </AnimatedSection>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ═══════════════ TESTIMONIALS ═══════════════ */}
+      <section className="py-24 lg:py-32 bg-card">
+        <div className="container mx-auto px-6 lg:px-10">
+          <AnimatedSection>
+            <div className="text-center max-w-2xl mx-auto mb-20">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="h-px w-8 bg-gold/40" />
+                <span className="text-gold text-[12px] font-medium tracking-[0.3em] uppercase">Testimonials</span>
+                <div className="h-px w-8 bg-gold/40" />
+              </div>
+              <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+                What Our <span className="gold-text-gradient">Clients Say</span>
+              </h2>
+              <p className="text-muted-foreground">
+                Hear from the investors and homeowners who trusted us with their biggest decisions.
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((t, i) => (
+              <AnimatedSection key={i} delay={i * 0.12}>
+                <div className="bg-background p-8 border border-border hover:border-gold/15 transition-all h-full flex flex-col">
+                  <Quote className="w-8 h-8 text-gold/30 mb-4" />
+                  <p className="text-muted-foreground text-sm leading-relaxed flex-1 italic">"{t.quote}"</p>
+                  <div className="luxury-divider my-6" />
+                  <div>
+                    <div className="font-display text-lg font-semibold">{t.name}</div>
+                    <div className="text-gold/70 text-xs tracking-wider uppercase mt-1">{t.role}</div>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ AREA EXPERTISE ═══════════════ */}
+      <section className="py-24 lg:py-32">
+        <div className="container mx-auto px-6 lg:px-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <AnimatedSection direction="left">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-px w-8 bg-gold/40" />
+                <span className="text-gold text-[12px] font-medium tracking-[0.3em] uppercase">Expertise</span>
+              </div>
+              <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
+                Greater Noida West <span className="gold-text-gradient">Specialists</span>
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Greater Noida West is one of the fastest-growing real estate corridors in the NCR. With the upcoming Jewar International Airport just 30 minutes away, new metro lines, and world-class infrastructure development, property values here are set to appreciate significantly in the coming years.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-8">
+                As specialists in this market since 2005, we have an unmatched understanding of micro-locations, developer track records, pricing trends, and investment potential. Whether you're buying your first home, upgrading, or building an investment portfolio — we have the knowledge and network to find you the best deal.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  "Knowledge Park 5",
+                  "Sector 1 Noida Ext.",
+                  "Noida Expressway Belt",
+                  "Tech Zone IV",
+                  "Jewar Airport Zone",
+                  "Greater Noida West"
+                ].map((area, i) => (
+                  <div key={i} className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="w-4 h-4 text-gold shrink-0" />
+                    <span className="text-muted-foreground">{area}</span>
+                  </div>
+                ))}
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection direction="right">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-card p-8 border border-border gold-border-glow">
+                  <Award className="w-8 h-8 text-gold mb-4" />
+                  <div className="font-display text-3xl font-bold gold-text-gradient">20+</div>
+                  <div className="text-muted-foreground text-sm mt-1">Years in Real Estate</div>
+                </div>
+                <div className="bg-card p-8 border border-border gold-border-glow">
+                  <Building2 className="w-8 h-8 text-gold mb-4" />
+                  <div className="font-display text-3xl font-bold gold-text-gradient">10+</div>
+                  <div className="text-muted-foreground text-sm mt-1">Partner Developers</div>
+                </div>
+                <div className="bg-card p-8 border border-border gold-border-glow">
+                  <Users className="w-8 h-8 text-gold mb-4" />
+                  <div className="font-display text-3xl font-bold gold-text-gradient">100+</div>
+                  <div className="text-muted-foreground text-sm mt-1">Happy Investors</div>
+                </div>
+                <div className="bg-card p-8 border border-border gold-border-glow">
+                  <Clock className="w-8 h-8 text-gold mb-4" />
+                  <div className="font-display text-3xl font-bold gold-text-gradient">24hr</div>
+                  <div className="text-muted-foreground text-sm mt-1">Response Time</div>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ CTA ═══════════════ */}
       <section className="relative py-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-charcoal to-background" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[120px]" />
