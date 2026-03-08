@@ -102,8 +102,7 @@ const testimonialsCol2 = [
   },
 ];
 
-// Duplicate projects for infinite scroll
-const scrollProjects = [...projects, ...projects, ...projects, ...projects];
+const featuredProjects = projects.slice(0, 6);
 
 function TestimonialCard({ testimonial }: { testimonial: { name: string; role: string; quote: string; rating: number } }) {
   return (
