@@ -23,62 +23,66 @@ export default function ProjectDetail() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative py-32 lg:py-40">
+      <section className="relative py-36 lg:py-44">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${project.image})` }}>
-          <div className="absolute inset-0 bg-navy-dark/80" />
+          <div className="absolute inset-0 bg-background/85 backdrop-blur-sm" />
         </div>
-        <div className="relative container mx-auto px-4">
+        <div className="relative container mx-auto px-6">
           <AnimatedSection>
-            <Link to="/projects" className="inline-flex items-center text-gold-light/60 hover:text-gold text-sm mb-6">
-              <ArrowLeft className="w-4 h-4 mr-1" /> Back to Projects
+            <Link to="/projects" className="inline-flex items-center text-muted-foreground hover:text-gold text-sm tracking-wider mb-8 transition-colors">
+              <ArrowLeft className="w-4 h-4 mr-2" /> Back to Projects
             </Link>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-xs font-medium bg-gold/20 text-gold px-3 py-1 rounded-full">{project.status}</span>
-              <span className="text-xs text-gold-light/50">{project.type}</span>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-[11px] font-medium bg-gold text-background px-3 py-1 tracking-[0.15em] uppercase">{project.status}</span>
+              <span className="text-xs text-muted-foreground tracking-wider uppercase">{project.type}</span>
             </div>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-gold-light mb-3">
-              {project.name}
-            </h1>
-            <p className="flex items-center gap-1 text-gold-light/60 text-lg">
-              <MapPin className="w-5 h-5" /> {project.location}
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-3">{project.name}</h1>
+            <p className="flex items-center gap-2 text-muted-foreground text-lg">
+              <MapPin className="w-5 h-5 text-gold/60" /> {project.location}
             </p>
-            <div className="font-display text-2xl font-bold text-gold mt-4">{project.priceRange}</div>
+            <div className="font-display text-3xl font-bold text-gold mt-6">{project.priceRange}</div>
           </AnimatedSection>
         </div>
       </section>
 
-      <div className="py-16 lg:py-24 bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-3 gap-12">
-            {/* Main Content */}
-            <div className="lg:col-span-2 space-y-12">
-              {/* Overview */}
+      <div className="py-20 lg:py-28">
+        <div className="container mx-auto px-6 lg:px-10">
+          <div className="grid lg:grid-cols-3 gap-16">
+            {/* Main */}
+            <div className="lg:col-span-2 space-y-16">
               <AnimatedSection>
-                <h2 className="font-display text-2xl font-bold mb-4">Project Overview</h2>
-                <div className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="h-px w-8 bg-gold/40" />
+                  <span className="text-gold text-[12px] font-medium tracking-[0.3em] uppercase">Overview</span>
+                </div>
+                <div className="text-muted-foreground leading-[1.8] whitespace-pre-line text-[15px]">
                   {project.fullDescription}
                 </div>
               </AnimatedSection>
 
-              {/* Specifications */}
               <AnimatedSection>
-                <h2 className="font-display text-2xl font-bold mb-4">Specifications</h2>
-                <div className="grid sm:grid-cols-2 gap-3">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="h-px w-8 bg-gold/40" />
+                  <span className="text-gold text-[12px] font-medium tracking-[0.3em] uppercase">Specifications</span>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-4">
                   {project.specifications.map((s, i) => (
-                    <div key={i} className="bg-muted rounded-lg p-4 border border-border">
-                      <div className="text-xs text-muted-foreground">{s.label}</div>
+                    <div key={i} className="bg-card p-5 border border-border">
+                      <div className="text-xs text-muted-foreground tracking-wider uppercase">{s.label}</div>
                       <div className="font-semibold text-sm mt-1">{s.value}</div>
                     </div>
                   ))}
                 </div>
               </AnimatedSection>
 
-              {/* Highlights */}
               <AnimatedSection>
-                <h2 className="font-display text-2xl font-bold mb-4">Key Highlights</h2>
-                <div className="grid sm:grid-cols-2 gap-3">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="h-px w-8 bg-gold/40" />
+                  <span className="text-gold text-[12px] font-medium tracking-[0.3em] uppercase">Key Highlights</span>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-4">
                   {project.highlights.map((h, i) => (
-                    <div key={i} className="flex items-start gap-2">
+                    <div key={i} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-gold shrink-0 mt-0.5" />
                       <span className="text-muted-foreground text-sm">{h}</span>
                     </div>
@@ -86,26 +90,30 @@ export default function ProjectDetail() {
                 </div>
               </AnimatedSection>
 
-              {/* Amenities */}
               <AnimatedSection>
-                <h2 className="font-display text-2xl font-bold mb-4">Amenities</h2>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="h-px w-8 bg-gold/40" />
+                  <span className="text-gold text-[12px] font-medium tracking-[0.3em] uppercase">Amenities</span>
+                </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {project.amenities.map((a, i) => (
-                    <div key={i} className="flex items-center gap-2 bg-muted rounded-lg p-3 text-sm">
-                      <div className="w-2 h-2 bg-gold rounded-full shrink-0" />
+                    <div key={i} className="flex items-center gap-3 bg-card p-4 border border-border text-sm">
+                      <div className="w-1.5 h-1.5 bg-gold shrink-0" />
                       {a}
                     </div>
                   ))}
                 </div>
               </AnimatedSection>
 
-              {/* Location Advantages */}
               <AnimatedSection>
-                <h2 className="font-display text-2xl font-bold mb-4">Location Advantages</h2>
-                <div className="space-y-2">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="h-px w-8 bg-gold/40" />
+                  <span className="text-gold text-[12px] font-medium tracking-[0.3em] uppercase">Location Advantages</span>
+                </div>
+                <div className="space-y-3">
                   {project.locationAdvantages.map((l, i) => (
-                    <div key={i} className="flex items-start gap-2">
-                      <MapPin className="w-4 h-4 text-gold shrink-0 mt-0.5" />
+                    <div key={i} className="flex items-start gap-3">
+                      <MapPin className="w-4 h-4 text-gold/60 shrink-0 mt-0.5" />
                       <span className="text-muted-foreground text-sm">{l}</span>
                     </div>
                   ))}
@@ -113,20 +121,20 @@ export default function ProjectDetail() {
               </AnimatedSection>
             </div>
 
-            {/* Sidebar - Lead Form */}
+            {/* Sidebar */}
             <div>
-              <div className="sticky top-24 space-y-6">
-                <div className="bg-card rounded-lg p-6 border border-border shadow-lg">
-                  <h3 className="font-display text-xl font-bold mb-2">Interested in {project.name}?</h3>
-                  <p className="text-muted-foreground text-sm mb-6">Get exclusive pricing and offers</p>
+              <div className="sticky top-28 space-y-6">
+                <div className="bg-card p-8 border border-border gold-border-glow">
+                  <h3 className="font-display text-2xl font-semibold mb-1">Interested?</h3>
+                  <p className="text-muted-foreground text-sm mb-6">Get exclusive pricing & offers</p>
                   <LeadForm selectedProject={project.name} />
                 </div>
 
-                <div className="bg-navy rounded-lg p-6 text-center">
-                  <p className="text-gold-light/70 text-sm mb-3">Speak to our property expert</p>
+                <div className="bg-card p-6 border border-gold/10 text-center">
+                  <p className="text-muted-foreground text-sm mb-4">Speak to our property expert</p>
                   <a href="tel:9958004587">
-                    <Button className="bg-gold text-navy hover:bg-gold-dark w-full h-12 font-semibold">
-                      <Phone className="w-5 h-5 mr-2" /> +91 9958004587
+                    <Button className="bg-gold text-background hover:bg-gold-dark w-full h-12 font-body font-semibold text-[13px] tracking-[0.15em] uppercase rounded-none">
+                      <Phone className="w-4 h-4 mr-3" /> +91 9958004587
                     </Button>
                   </a>
                 </div>
