@@ -367,11 +367,11 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ═══════════════ TESTIMONIALS ═══════════════ */}
-      <section className="py-24 lg:py-32 bg-card">
+      {/* ═══════════════ TESTIMONIALS — TWO COLUMN SCROLL ═══════════════ */}
+      <section className="py-24 lg:py-32 bg-card overflow-hidden">
         <div className="container mx-auto px-6 lg:px-10">
           <AnimatedSection>
-            <div className="text-center max-w-2xl mx-auto mb-20">
+            <div className="text-center max-w-2xl mx-auto mb-6">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <div className="h-px w-8 bg-gold/40" />
                 <span className="text-gold text-[12px] font-medium tracking-[0.3em] uppercase">Testimonials</span>
@@ -386,20 +386,58 @@ export default function Index() {
             </div>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((t, i) => (
-              <AnimatedSection key={i} delay={i * 0.12}>
-                <div className="bg-background p-8 border border-border hover:border-gold/15 transition-all h-full flex flex-col">
-                  <Quote className="w-8 h-8 text-gold/30 mb-4" />
-                  <p className="text-muted-foreground text-sm leading-relaxed flex-1 italic">"{t.quote}"</p>
-                  <div className="luxury-divider my-6" />
-                  <div>
-                    <div className="font-display text-lg font-semibold">{t.name}</div>
-                    <div className="text-gold/70 text-xs tracking-wider uppercase mt-1">{t.role}</div>
-                  </div>
+          {/* Google Verified Badge */}
+          <AnimatedSection>
+            <div className="flex items-center justify-center gap-3 mb-16">
+              <div className="flex items-center gap-2 bg-background border border-border px-5 py-2.5 rounded-full">
+                <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
+                <div className="flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-3.5 h-3.5 fill-gold text-gold" />
+                  ))}
                 </div>
-              </AnimatedSection>
-            ))}
+                <span className="text-foreground text-sm font-semibold ml-1">4.9</span>
+                <span className="text-muted-foreground text-xs">Google Verified</span>
+              </div>
+            </div>
+          </AnimatedSection>
+
+          {/* Two-column infinite scroll */}
+          <div className="grid grid-cols-2 gap-4 md:gap-6 h-[500px] md:h-[600px] overflow-hidden relative">
+            {/* Fade overlays */}
+            <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-card to-transparent z-10 pointer-events-none" />
+            <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-card to-transparent z-10 pointer-events-none" />
+
+            {/* Column 1 — scrolls UP */}
+            <div className="overflow-hidden relative">
+              <motion.div
+                className="flex flex-col gap-4 md:gap-6"
+                animate={{ y: [0, -(testimonialsCol1.length * 220)] }}
+                transition={{ y: { repeat: Infinity, repeatType: "loop", duration: 20, ease: "linear" } }}
+              >
+                {[...testimonialsCol1, ...testimonialsCol1, ...testimonialsCol1].map((t, i) => (
+                  <TestimonialCard key={`c1-${i}`} testimonial={t} />
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Column 2 — scrolls DOWN */}
+            <div className="overflow-hidden relative">
+              <motion.div
+                className="flex flex-col gap-4 md:gap-6"
+                animate={{ y: [-(testimonialsCol2.length * 220), 0] }}
+                transition={{ y: { repeat: Infinity, repeatType: "loop", duration: 22, ease: "linear" } }}
+              >
+                {[...testimonialsCol2, ...testimonialsCol2, ...testimonialsCol2].map((t, i) => (
+                  <TestimonialCard key={`c2-${i}`} testimonial={t} />
+                ))}
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
