@@ -291,7 +291,7 @@ export default function Index() {
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 25,
+                duration: 60,
                 ease: "linear",
               },
             }}
