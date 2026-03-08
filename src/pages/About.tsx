@@ -16,63 +16,72 @@ const whyUs = [
   "Dedicated relationship manager for every client",
   "Post-sale support and documentation assistance",
   "Market insights and investment advisory",
-  "Proven track record of happy homeowners",
+  "Proven track record since 2005",
 ];
 
 export default function About() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative py-32 lg:py-40">
+      <section className="relative py-36 lg:py-44">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${aboutBg})` }}>
-          <div className="absolute inset-0 bg-navy-dark/85" />
+          <div className="absolute inset-0 bg-background/90" />
         </div>
-        <div className="relative container mx-auto px-4 text-center">
+        <div className="relative container mx-auto px-6 text-center">
           <AnimatedSection>
-            <span className="text-gold text-sm uppercase tracking-wider font-medium">About Us</span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-gold-light mt-4 mb-4">
-              The ADI Homes
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="h-px w-10 bg-gold/40" />
+              <span className="text-gold text-[12px] font-medium tracking-[0.3em] uppercase">About Us</span>
+              <div className="h-px w-10 bg-gold/40" />
+            </div>
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-4">
+              The ADI <span className="gold-text-gradient">Homes</span>
             </h1>
-            <p className="text-gold-light/60 text-lg max-w-2xl mx-auto">
-              Your Trusted Partner in Premium Real Estate
+            <p className="text-muted-foreground text-lg">
+              Where Money Grows — Since 2005
             </p>
           </AnimatedSection>
         </div>
       </section>
 
       {/* Story */}
-      <section className="py-20 lg:py-28 bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="py-24 lg:py-32">
+        <div className="container mx-auto px-6 lg:px-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
             <AnimatedSection direction="left">
-              <span className="text-gold text-sm uppercase tracking-wider font-medium">Our Story</span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold mt-3 mb-6">
-                Building Dreams, <span className="text-gold">One Home at a Time</span>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-px w-8 bg-gold/40" />
+                <span className="text-gold text-[12px] font-medium tracking-[0.3em] uppercase">Our Story</span>
+              </div>
+              <h2 className="font-display text-4xl md:text-5xl font-bold mb-8">
+                Building Dreams, <span className="gold-text-gradient">One Home at a Time</span>
               </h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <div className="space-y-5 text-muted-foreground leading-relaxed">
                 <p>
-                  The ADI Homes was founded with a singular vision — to bridge the gap between home seekers and premium real estate opportunities in one of India's most dynamic property markets: Greater Noida West. What started as a passion for real estate has evolved into a trusted advisory firm that has helped numerous families find their dream homes.
+                  The ADI Homes was founded with a singular vision — to bridge the gap between home seekers and premium real estate opportunities in one of India's most dynamic property markets: Greater Noida West.
                 </p>
                 <p>
-                  Our team comprises seasoned real estate professionals with deep knowledge of the Greater Noida West market, including Knowledge Park, Sector 1, and the wider Noida Extension area. We understand that buying a home is one of the most significant decisions in a person's life, and we are committed to making that journey as smooth, transparent, and rewarding as possible.
+                  Our team comprises seasoned real estate professionals with deep knowledge of the Greater Noida West market. We understand that buying a home is one of the most significant decisions in a person's life, and we are committed to making that journey seamless, transparent, and rewarding.
                 </p>
                 <p>
-                  We work exclusively with RERA-registered, reputed developers to ensure that every property we recommend meets the highest standards of quality, legal compliance, and investment potential. From studio apartments and luxury flats to commercial spaces, our portfolio covers a wide spectrum of real estate options to suit every budget and requirement.
+                  We work exclusively with RERA-registered, reputed developers to ensure that every property we recommend meets the highest standards of quality, legal compliance, and investment potential.
                 </p>
               </div>
             </AnimatedSection>
 
             <AnimatedSection direction="right">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-6">
                 {values.map((v, i) => (
                   <div
                     key={i}
-                    className={`bg-card rounded-lg p-6 border border-border hover:border-gold/30 transition-all ${
-                      i === 2 ? "col-span-2" : ""
-                    }`}
+                    className="bg-card p-8 border border-border hover:border-gold/20 transition-all duration-300 gold-border-glow"
                   >
-                    <v.icon className="w-8 h-8 text-gold mb-3" />
-                    <h3 className="font-display text-lg font-semibold mb-2">{v.title}</h3>
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="w-10 h-10 border border-gold/20 flex items-center justify-center">
+                        <v.icon className="w-5 h-5 text-gold" />
+                      </div>
+                      <h3 className="font-display text-xl font-semibold">{v.title}</h3>
+                    </div>
                     <p className="text-muted-foreground text-sm leading-relaxed">{v.desc}</p>
                   </div>
                 ))}
@@ -82,24 +91,28 @@ export default function About() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-20 lg:py-28 bg-navy">
-        <div className="container mx-auto px-4 lg:px-8">
+      {/* Why Trust Us */}
+      <section className="py-24 lg:py-32 bg-card">
+        <div className="container mx-auto px-6 lg:px-10">
           <AnimatedSection>
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <span className="text-gold text-sm uppercase tracking-wider font-medium">Why The ADI Homes</span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-gold-light mt-3">
-                Why Clients Trust Us
+            <div className="text-center max-w-2xl mx-auto mb-16">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="h-px w-8 bg-gold/40" />
+                <span className="text-gold text-[12px] font-medium tracking-[0.3em] uppercase">Trust</span>
+                <div className="h-px w-8 bg-gold/40" />
+              </div>
+              <h2 className="font-display text-4xl md:text-5xl font-bold">
+                Why Clients <span className="gold-text-gradient">Trust Us</span>
               </h2>
             </div>
           </AnimatedSection>
 
           <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
             {whyUs.map((item, i) => (
-              <AnimatedSection key={i} delay={i * 0.08}>
-                <div className="flex items-start gap-3 bg-navy-light/30 rounded-lg p-4 border border-gold/10">
+              <AnimatedSection key={i} delay={i * 0.06}>
+                <div className="flex items-start gap-4 bg-background p-5 border border-border hover:border-gold/15 transition-all">
                   <CheckCircle className="w-5 h-5 text-gold shrink-0 mt-0.5" />
-                  <span className="text-gold-light/80 text-sm">{item}</span>
+                  <span className="text-muted-foreground text-sm">{item}</span>
                 </div>
               </AnimatedSection>
             ))}
