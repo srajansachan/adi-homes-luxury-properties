@@ -249,7 +249,7 @@ export default function Index() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((f, i) => (
               <AnimatedSection key={i} delay={i * 0.12} direction="up">
-                <div className="group bg-card p-8 border border-border hover:border-gold/20 transition-all duration-500 h-full gold-border-glow">
+                <div className="group glass-gold p-8 hover:border-gold/20 transition-all duration-500 h-full rounded-lg">
                   <div className="w-12 h-12 border border-gold/20 flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-all duration-300">
                     <f.icon className="w-5 h-5 text-gold" />
                   </div>
