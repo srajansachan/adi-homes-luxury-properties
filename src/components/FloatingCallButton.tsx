@@ -4,10 +4,10 @@ export default function FloatingCallButton() {
   return (
     <a
       href="tel:9958004587"
-      className="fixed bottom-6 left-6 z-50 w-14 h-14 rounded-full gradient-gold flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300"
+      className="fixed bottom-6 left-6 z-50 w-11 h-11 rounded-full border-2 border-gold bg-transparent flex items-center justify-center hover:bg-gold hover:text-background text-gold transition-all duration-300 shadow-md"
       aria-label="Call Now"
     >
-      <Phone className="w-6 h-6 text-background" />
+      <Phone className="w-4 h-4" />
     </a>
   );
 }
