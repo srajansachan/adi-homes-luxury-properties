@@ -105,6 +105,24 @@ const testimonialsCol2 = [
 // Duplicate projects for infinite scroll
 const scrollProjects = [...projects, ...projects, ...projects, ...projects];
 
+function TestimonialCard({ testimonial }: { testimonial: { name: string; role: string; quote: string; rating: number } }) {
+  return (
+    <div className="bg-background p-5 md:p-6 border border-border hover:border-gold/15 transition-all flex flex-col shrink-0">
+      <div className="flex items-center gap-1 mb-3">
+        {[...Array(testimonial.rating)].map((_, i) => (
+          <Star key={i} className="w-3 h-3 fill-gold text-gold" />
+        ))}
+      </div>
+      <p className="text-muted-foreground text-xs md:text-sm leading-relaxed flex-1 italic mb-4">"{testimonial.quote}"</p>
+      <div className="luxury-divider mb-3" />
+      <div>
+        <div className="font-display text-base md:text-lg font-semibold">{testimonial.name}</div>
+        <div className="text-gold/70 text-[10px] md:text-xs tracking-wider uppercase mt-0.5">{testimonial.role}</div>
+      </div>
+    </div>
+  );
+}
+
 export default function Index() {
   return (
     <div className="overflow-hidden">
