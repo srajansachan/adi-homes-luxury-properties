@@ -107,7 +107,7 @@ const scrollProjects = [...projects, ...projects, ...projects, ...projects];
 
 function TestimonialCard({ testimonial }: { testimonial: { name: string; role: string; quote: string; rating: number } }) {
   return (
-    <div className="bg-background p-5 md:p-6 border border-border hover:border-gold/15 transition-all flex flex-col shrink-0">
+    <div className="glass-card p-5 md:p-6 hover:border-gold/15 transition-all flex flex-col shrink-0 rounded-lg">
       <div className="flex items-center gap-1 mb-3">
         {[...Array(testimonial.rating)].map((_, i) => (
           <Star key={i} className="w-3 h-3 fill-gold text-gold" />
@@ -249,7 +249,7 @@ export default function Index() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((f, i) => (
               <AnimatedSection key={i} delay={i * 0.12} direction="up">
-                <div className="group bg-card p-8 border border-border hover:border-gold/20 transition-all duration-500 h-full gold-border-glow">
+                <div className="group glass-gold p-8 hover:border-gold/20 transition-all duration-500 h-full rounded-lg">
                   <div className="w-12 h-12 border border-gold/20 flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-all duration-300">
                     <f.icon className="w-5 h-5 text-gold" />
                   </div>
@@ -302,7 +302,7 @@ export default function Index() {
                 to={`/projects/${project.slug}`}
                 className="group block shrink-0 w-[380px]"
               >
-                <div className="bg-background border border-border hover:border-gold/20 transition-all duration-500 overflow-hidden luxury-shadow">
+                <div className="glass hover:border-gold/20 transition-all duration-500 overflow-hidden rounded-lg luxury-shadow">
                   <div className="aspect-[4/3] overflow-hidden relative">
                     <img
                       src={project.image}
@@ -369,7 +369,7 @@ export default function Index() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((step, i) => (
               <AnimatedSection key={i} delay={i * 0.12} direction="up">
-                <div className="relative bg-card p-8 border border-border hover:border-gold/20 transition-all duration-500 h-full">
+                <div className="relative glass p-8 hover:border-gold/20 transition-all duration-500 h-full rounded-lg">
                   <div className="font-display text-6xl font-bold text-gold/10 absolute top-4 right-6">
                     {String(i + 1).padStart(2, "0")}
                   </div>
@@ -407,7 +407,7 @@ export default function Index() {
           {/* Google Verified Badge */}
           <AnimatedSection>
             <div className="flex items-center justify-center gap-3 mb-16">
-              <div className="flex items-center gap-2 bg-background border border-border px-5 py-2.5 rounded-full">
+              <div className="flex items-center gap-2 glass px-5 py-2.5 rounded-full">
                 <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
                   <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
                   <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -497,22 +497,22 @@ export default function Index() {
 
             <AnimatedSection direction="right">
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-card p-8 border border-border gold-border-glow">
+                <div className="glass-gold p-8 rounded-lg">
                   <Award className="w-8 h-8 text-gold mb-4" />
                   <div className="font-display text-3xl font-bold gold-text-gradient">20+</div>
                   <div className="text-muted-foreground text-sm mt-1">Years in Real Estate</div>
                 </div>
-                <div className="bg-card p-8 border border-border gold-border-glow">
+                <div className="glass-gold p-8 rounded-lg">
                   <Building2 className="w-8 h-8 text-gold mb-4" />
                   <div className="font-display text-3xl font-bold gold-text-gradient">10+</div>
                   <div className="text-muted-foreground text-sm mt-1">Partner Developers</div>
                 </div>
-                <div className="bg-card p-8 border border-border gold-border-glow">
+                <div className="glass-gold p-8 rounded-lg">
                   <Users className="w-8 h-8 text-gold mb-4" />
                   <div className="font-display text-3xl font-bold gold-text-gradient">100+</div>
                   <div className="text-muted-foreground text-sm mt-1">Happy Investors</div>
                 </div>
-                <div className="bg-card p-8 border border-border gold-border-glow">
+                <div className="glass-gold p-8 rounded-lg">
                   <Clock className="w-8 h-8 text-gold mb-4" />
                   <div className="font-display text-3xl font-bold gold-text-gradient">24hr</div>
                   <div className="text-muted-foreground text-sm mt-1">Response Time</div>
