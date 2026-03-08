@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedSection from "@/components/AnimatedSection";
+import SEOHead from "@/components/SEOHead";
 import { projects } from "@/data/projects";
 import heroBg from "@/assets/hero-bg.jpg";
 import logoImg from "@/assets/logo.png";
